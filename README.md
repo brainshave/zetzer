@@ -1,6 +1,6 @@
 # Zetzer
 
-Zetzer is an HTML template engine.
+Zetzer is an HTML template processor.
 
 Features!
 
@@ -14,7 +14,8 @@ Features!
 profession where a person would manually compose a page for a printing
 press by arranging metal fonts on a matrix. Interesting fact: the
 zetzer would see the page mirrored left-right while working on it so
-they had to master reading in this weird form.
+they had to master reading in this weird form. English word for it is
+probably typesetter.
 
 ## Main concepts
 
@@ -58,9 +59,43 @@ inside the partial. A partial can have a template. This means it will
 be wrapped in that template before putting it in the document that
 requested it.
 
-## Usage
+## Usage & Configuration
 
+Zetzer can be used as a library and grunt or broccoli
+plugin.
 
+- [broccoli-zetzer][broccoli-zetzer]
+- [grunt-zetzer][grunt-zetzer]
+
+Configuration options:
+
+### pages (broccoli only)
+
+Directory where input pages are located. Grunt version uses the
+standard `files` scheme instead.
+
+### templates
+
+Directory where all the templates are located.
+
+### partials
+
+Directory that holds all partials.
+
+### env
+
+Global environment. Fields defined in `env` will be visible on every
+`it` object inside [doT][dot] templates. They can be overridden by
+file-local headers.
+
+### meta_data_separator
+
+Separator between a header and file contents. By default it's an empty
+line.
+
+### dot_template_settings
+
+Settings for the [doT][dot] template engine.
 
 ---
 
@@ -200,6 +235,7 @@ If you take a look at any file in `lib/` you can notice that there's no dependen
 
 ## Release History
 
+- __version 1.2.0__ () - rename to Zetzer and split grunt-specific code to grunt-zetzer
 - __version 1.1.0__ (1st June, 2014) - apply doT to all HTML files
 - __version 1.0.2__ (10th December, 2013) - Windows compatibility
 - __version 1.0.1__ (24th November, 2013) - fix for new markdown version
@@ -208,3 +244,5 @@ If you take a look at any file in `lib/` you can notice that there's no dependen
 - __version 0.0.3__ (19th September, 2013) - fix dependencies in `package.json`
 - __version 0.0.2__
 - __version 0.0.1__ (16th September, 2013)
+
+[dot]: http://olado.github.io/doT/
