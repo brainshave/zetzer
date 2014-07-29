@@ -100,15 +100,24 @@ Settings for the [doT][dot] template engine.
 ## Contributing
 
 Please make sure your changes follow the current style and all test
-passes. Each new feature and bug fix require new tests.
+passes. Each new feature and bug fix require new tests. To run the
+test suite run `npm test`.
 
 For buildtool-related bugs please take a look at
 [grunt-zetzer][grunt-zetzer] and [broccoli-zetzer][broccoli-zetzer]
 projects.
 
+If you take a look at any source file you can notice that there's no
+dependencies between modules. All dependencies are injected in by the
+library consumers ([grunt-zetzer] and [broccoli-zetzer]). That's the
+place where the integration happens.
+
 ## Release History
 
 - __version 2.0.0__ (29th July, 2014) - rename to Zetzer and split grunt-specific code to grunt-zetzer
+
+Previous versions as "grunt-stencil":
+
 - __version 1.1.0__ (1st June, 2014) - apply doT to all HTML files
 - __version 1.0.2__ (10th December, 2013) - Windows compatibility
 - __version 1.0.1__ (24th November, 2013) - fix for new markdown version
