@@ -5,7 +5,7 @@ var trim = require("./trim");
 
 describe("markdown_compiler", function () {
 
-  var compiler = require("../lib/markdown_compiler");
+  var compiler = require("../markdown");
 
   describe("applies_to", function () {
     it("returns true for a markdown path", function () {

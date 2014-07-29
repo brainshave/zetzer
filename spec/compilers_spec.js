@@ -1,7 +1,7 @@
 "use strict";
 
 var random = require("./random");
-var compilers_setup = require("../lib/compilers");
+var compilers_setup = require("../compilers");
 
 describe("compilers", function() {
 

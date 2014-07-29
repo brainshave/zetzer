@@ -1,7 +1,7 @@
 "use strict";
 
 var random = require("./random");
-var dot_compiler_setup = require("../lib/dot_compiler");
+var dot_compiler_setup = require("../dot");
 
 describe("dot_compiler", function() {
   describe("compile", function () {

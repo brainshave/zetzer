@@ -7,7 +7,7 @@ describe("parse", function () {
   };
   var content = "This is the content of a file.";
   var src = JSON.stringify(meta_data) + separator + content;
-  var parse = require("../lib/parse")(separator);
+  var parse = require("../parse")(separator);
 
   describe(".content", function() {
     it("returns the contents of a given source as a string", function() {

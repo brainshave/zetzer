@@ -114,7 +114,7 @@ If you take a look at any file in `lib/` you can notice that there's no dependen
 
 ## Release History
 
-- __version 1.2.0__ () - rename to Zetzer and split grunt-specific code to grunt-zetzer
+- __version 2.0.0__ (29th July, 2014) - rename to Zetzer and split grunt-specific code to grunt-zetzer
 - __version 1.1.0__ (1st June, 2014) - apply doT to all HTML files
 - __version 1.0.2__ (10th December, 2013) - Windows compatibility
 - __version 1.0.1__ (24th November, 2013) - fix for new markdown version
