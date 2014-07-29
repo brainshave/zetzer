@@ -4,13 +4,13 @@ Zetzer is an HTML template processor.
 
 Features!
 
-- pages, templates and partials
-- [doT][dot] templates in HTML input
-- Markdown input using [marked][marked] (with optional doT processing)
+- **pages**, **templates** and **partials**
+- [doT][dot] templates
+- Markdown input using [marked][marked]
 - optional JSON headers for metadata
 - grunt and broccoli plugins
 
-"Zetzer" ("setzer" in German, "zecer" in Polish) used to be a
+The name: "Zetzer" ("setzer" in German, "zecer" in Polish) used to be a
 profession where a person would manually compose a page for a printing
 press by arranging metal fonts on a matrix. Interesting fact: the
 zetzer would see the page mirrored left-right while working on it so
@@ -19,15 +19,22 @@ probably typesetter.
 
 ## Main concepts
 
-Zetzer has three main concepts: page, template and partial. Each of
+Zetzer has three main concepts: page, template and a partial. Each of
 them can declare a JSON header for some extra info. Header's metadata
-is accessible from within the document as {{= it.field_name }}. The
+is accessible from within the document as `{{= it.field_name }}`. The
 header is divided from content by one empty line.
 
 One of special header fields is `template` which declares the template
 that current document will be wrapped with. A template can be declared
 for a page, a partial and even for another template. (Possible
 circular wrapping will be detected.)
+
+Based on file's extension, it will be processed by either by doT or
+marked:
+
+- `*.md`: marked
+- `*.html`: doT
+- `*.dot.md`: doT & marked
 
 ### Pages
 
@@ -37,7 +44,7 @@ HTML document.
 
 ### Templates
 
-**Templates** wrap around the content of a **page**, partial** or
+**Templates** wrap around the content of a **page**, **partial** or
 another **template**. Inside a template, invoking contents of the
 wrapped document is made by:
 
@@ -52,23 +59,17 @@ We can access wrapped document's header by naming its fields like:
 Includes can be invoked by name (extension can be omitted) from any
 other **partial**, **page** or **template**:
 
-    {{= it.include("navigation", { option: "value" }) }}
+    {{= it.include("navigation") }}
 
 We can pass extra options to the partial that will appear on the `it`
-inside the partial. A partial can have a template. This means it will
-be wrapped in that template before putting it in the document that
-requested it.
+inside the partial.
 
-### File extensions
+    {{= it.include("navigation", { option: "value" }) }}
 
-Based on file's extension, it will be processed by either by doT or
-marked:
+A partial can have a template. This means it will be wrapped in that
+template before putting it in the document that requested it.
 
-- `*.md`: marked
-- `*.html`: doT
-- `*.dot.md`: marked & doT
-
-## Usage & Configuration
+## Usage
 
 Zetzer can be used as a library and Grunt or Broccoli
 plugin. Specific instruction can be found here:
@@ -76,9 +77,11 @@ plugin. Specific instruction can be found here:
 - [broccoli-zetzer][broccoli-zetzer]
 - [grunt-zetzer][grunt-zetzer]
 
-Configuration options:
+## Configuration options
 
-### pages (broccoli only)
+
+
+### pages (broccoli-zetzer only)
 
 Directory where input pages are located. Grunt version uses the
 standard `files` scheme instead. A tree in Broccoli.
