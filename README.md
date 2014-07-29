@@ -6,7 +6,7 @@ Features!
 
 - pages, templates and partials
 - [doT][dot] templates in HTML input
-- [Markdown][markdown] input (with optional doT processing)
+- Markdown input using [marked][marked] (with optional doT processing)
 - optional JSON headers for metadata
 - grunt and broccoli plugins
 
@@ -59,6 +59,15 @@ inside the partial. A partial can have a template. This means it will
 be wrapped in that template before putting it in the document that
 requested it.
 
+### File extensions
+
+Based on file's extension, it will be processed by either by doT or
+marked:
+
+- `*.md`: marked
+- `*.html`: doT
+- `*.dot.md`: marked & doT
+
 ## Usage & Configuration
 
 Zetzer can be used as a library and Grunt or Broccoli
@@ -72,15 +81,15 @@ Configuration options:
 ### pages (broccoli only)
 
 Directory where input pages are located. Grunt version uses the
-standard `files` scheme instead.
+standard `files` scheme instead. A tree in Broccoli.
 
 ### templates
 
-Directory where all the templates are located.
+Directory where all the templates are located. A tree in Broccoli.
 
 ### partials
 
-Directory that holds all partials.
+Directory that holds all partials. A tree in Broccoli.
 
 ### env
 
@@ -128,5 +137,6 @@ Previous versions as "grunt-stencil":
 - __version 0.0.1__ (16th September, 2013)
 
 [dot]: http://olado.github.io/doT/
+[marked]: https://github.com/chjj/marked
 [grunt-zetzer]: https://github.com/brainshave/grunt-zetzer
 [broccoli-zetzer]: https://github.com/brainshave/broccoli-zetzer
