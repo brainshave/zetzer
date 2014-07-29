@@ -1,7 +1,7 @@
 {
   "name": "zetzer",
   "description": "HTML template processor with doT, Markdown, templates and partials",
-  "version": "2.0.0-alpha1",
+  "version": "2.0.0-alpha2",
   "homepage": "https://github.com/brainshave/zetzer",
   "author": "Elise Hein <elisehein@gmail.com>",
   "contributors": [

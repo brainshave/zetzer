@@ -61,8 +61,8 @@ requested it.
 
 ## Usage & Configuration
 
-Zetzer can be used as a library and grunt or broccoli
-plugin.
+Zetzer can be used as a library and Grunt or Broccoli
+plugin. Specific instruction can be found here:
 
 - [broccoli-zetzer][broccoli-zetzer]
 - [grunt-zetzer][grunt-zetzer]
@@ -99,18 +99,12 @@ Settings for the [doT][dot] template engine.
 
 ## Contributing
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Lint and test your code using [Grunt](http://gruntjs.com/). Please ignore W092 errors (wrapping regexps). The warning will show up until there's an option to disable it in jshint.
+Please make sure your changes follow the current style and all test
+passes. Each new feature and bug fix require new tests.
 
-You can run the test suite with `grunt test` or `grunt testv` for more verbose output.
-
-Each new feature ough to have full test coverage. We usually start by writing a fixture which is a pair of two file: the one to process (the fixture) and it's expected output.
-Fixture are html or md files in `spec/fixtures`. Any partials and templates required by this fixture should be stored in `spec/partials` and `spec/templates`, respectively. The expected output of a fixture should be put in `spec/expected`.
-
-Once we run tests and the fixture is failing, we can implement any necessary feature by starting with writing specs (unit tests) in the `spec` directory, (like `spec/my_new_feature_spec.js`) and then implementing it in `lib` directory (`lib/my_new_feature.js`).
-
-Once all the unit tests pass, we can integrate new code back to the task with making the fixture test pass in mind :) .
-
-If you take a look at any file in `lib/` you can notice that there's no dependencies between modules. All dependencies are injected in the task file `tasks/stencil.js`. That's the place where the integration happens.
+For buildtool-related bugs please take a look at
+[grunt-zetzer][grunt-zetzer] and [broccoli-zetzer][broccoli-zetzer]
+projects.
 
 ## Release History
 
@@ -125,3 +119,5 @@ If you take a look at any file in `lib/` you can notice that there's no dependen
 - __version 0.0.1__ (16th September, 2013)
 
 [dot]: http://olado.github.io/doT/
+[grunt-zetzer]: https://github.com/brainshave/grunt-zetzer
+[broccoli-zetzer]: https://github.com/brainshave/broccoli-zetzer
