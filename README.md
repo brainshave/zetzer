@@ -72,14 +72,12 @@ template before putting it in the document that requested it.
 ## Usage
 
 Zetzer can be used as a library and Grunt or Broccoli
-plugin. Specific instruction can be found here:
+plugin. Specific instructions can be found here:
 
 - [broccoli-zetzer][broccoli-zetzer]
 - [grunt-zetzer][grunt-zetzer]
 
 ## Configuration options
-
-
 
 ### pages (broccoli-zetzer only)
 
