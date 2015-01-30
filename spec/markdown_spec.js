@@ -5,9 +5,13 @@ var trim = require("./trim");
 
 describe("markdown_compiler", function () {
 
-  var compiler = require("../markdown");
+  var markdown = require("../markdown");
+  
+
+
 
   describe("applies_to", function () {
+    var compiler = markdown({});
     it("returns true for a markdown path", function () {
       expect(compiler.applies_to("file.md")).toEqual(true);
       expect(compiler.applies_to("file.dot.md.haml")).toEqual(true);
@@ -19,9 +23,19 @@ describe("markdown_compiler", function () {
   });
 
   describe("compile", function () {
+    var compiler = markdown({});
     it("compiles markdown", function () {
       var content = random.word();
       expect(trim(compiler.compile(content))).toEqual("<p>" + content + "</p>");
     });
   });
+
+  describe("setup", function(){
+    it("renders markdown tables as html when gfm and tables are true", function(){
+      var content = "\r\n\r\n| col1 | col2 |\r\n| ---- | ---- |\r\n| row2col1 | row2col2 |\r\n\r\n"
+      var compiler = markdown({marked_settings:{gfm:true, tables:true}});
+      expect(trim(compiler.compile(content))).toMatch("<table");
+    });
+  });
+
 });
