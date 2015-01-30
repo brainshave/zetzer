@@ -115,6 +115,10 @@ line.
 
 Settings for the [doT][dot] template engine.
 
+### marked_settings
+
+Takes any [marked options](https://github.com/chjj/marked/tree/0d27d58f16e3aa478cbc89a9a304e592e2862c5a#options-1).
+
 ## Contributing
 
 Please make sure your changes follow the current style and all test
