@@ -12,19 +12,19 @@ module.exports = setup;
 var md = require("marked");
 
 function setup (config) {
-	var settings = config.marked_settings || {};
-	md.setOptions(settings);
+  var settings = config.marked_settings || {};
+  md.setOptions(settings);
 
-	return {
-	  applies_to: applies_to,
-	  compile: compile
-	};
+  return {
+    applies_to: applies_to,
+    compile: compile
+  };
 
-	function compile (src) {
-	  return md(src);
-	}
+  function compile (src) {
+    return md(src);
+  }
 
-	function applies_to (file_path) {
-	  return /\.md$|\.md\./.test(file_path);
-	}
+  function applies_to (file_path) {
+    return /\.md$|\.md\./.test(file_path);
+  }
 }
