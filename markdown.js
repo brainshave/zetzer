@@ -7,17 +7,24 @@
  * input files that require this compiler
  */
 
-module.exports = {
-  applies_to: applies_to,
-  compile: compile
-};
+module.exports = setup;
 
 var md = require("marked");
 
-function compile (src) {
-  return md(src);
-}
+function setup (config) {
+  var settings = config.marked_settings || {};
+  md.setOptions(settings);
 
-function applies_to (file_path) {
-  return /\.md$|\.md\./.test(file_path);
+  return {
+    applies_to: applies_to,
+    compile: compile
+  };
+
+  function compile (src) {
+    return md(src);
+  }
+
+  function applies_to (file_path) {
+    return /\.md$|\.md\./.test(file_path);
+  }
 }
