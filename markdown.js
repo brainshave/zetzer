@@ -13,7 +13,6 @@ var md = require("marked");
 
 function setup (config) {
   var settings = config.marked_settings || {};
-  md.setOptions(settings);
 
   return {
     applies_to: applies_to,
@@ -21,7 +20,7 @@ function setup (config) {
   };
 
   function compile (src) {
-    return md(src);
+    return md(src, settings);
   }
 
   function applies_to (file_path) {
