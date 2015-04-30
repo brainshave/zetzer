@@ -111,7 +111,7 @@ file-local headers.
 Separator between a header and file contents. By default it's an empty
 line.
 
-### dot_template_settings
+### dot_settings
 
 Settings for the [doT][dot] template engine.
 

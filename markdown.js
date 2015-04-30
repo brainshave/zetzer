@@ -12,7 +12,7 @@ module.exports = setup;
 var md = require("marked");
 
 function setup (config) {
-  var settings = config.marked_settings || {};
+  var settings = config.settings || {};
 
   return {
     applies_to: applies_to,

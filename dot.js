@@ -15,7 +15,7 @@ var _ = require("underscore");
 
 function setup (config) {
   var dotvar = config.dotvar || {};
-  var template_settings = config.template_settings || {};
+  var settings = _.extend({}, dot.templateSettings, config.settings || {});
 
   return {
     compile: compile,
@@ -23,7 +23,6 @@ function setup (config) {
   };
 
   function compile (src, params) {
-    var settings = _.extend({}, dot.templateSettings, template_settings);
     var template = dot.template(src, settings);
     return template(_.extend({}, dotvar, params));
   }

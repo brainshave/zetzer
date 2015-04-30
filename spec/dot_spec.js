@@ -26,7 +26,7 @@ describe("dot_compiler", function() {
       var title = random.word();
       var compiler = dot_compiler_setup({
         dotvar: {title: title},
-        template_settings: {varname: "newvar"}
+        settings: {varname: "newvar"}
       });
       var content = "{{= newvar.title }}";
       expect(compiler.compile(content)).toEqual(title);
