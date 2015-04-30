@@ -1,7 +1,7 @@
 {
   "name": "zetzer",
   "description": "HTML template processor with doT, Markdown, templates and partials",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/brainshave/zetzer",
   "author": "Elise Hein <elisehein@gmail.com>",
   "contributors": [
@@ -24,7 +24,7 @@
   "dependencies": {
     "dot": "^1.0.2",
     "underscore": "^1.6.0",
-    "marked": ">=0.2.10 <0.3"
+    "marked": "^0.3.0"
   },
   "devDependencies": {
     "jasmine-node": "latest"

@@ -117,7 +117,7 @@ Settings for the [doT][dot] template engine.
 
 ### marked_settings
 
-Takes any [marked options][marked_options].
+Settings for [marked][marked], [marked options][marked-options].
 
 ## Contributing
 
@@ -136,21 +136,22 @@ place where the integration happens.
 
 ## Release History
 
-- __version 2.0.0__ (29th July, 2014) - rename to Zetzer and split grunt-specific code to grunt-zetzer
+- __version 3.0.0__ (24th April 2015) - add passing of marked options
+- __version 2.0.0__ (29th July 2014) - rename to Zetzer and split grunt-specific code to grunt-zetzer
 
 Previous versions as "grunt-stencil":
 
-- __version 1.1.0__ (1st June, 2014) - apply doT to all HTML files
-- __version 1.0.2__ (10th December, 2013) - Windows compatibility
-- __version 1.0.1__ (24th November, 2013) - fix for new markdown version
-- __version 1.0.0__ (7th October, 2013) - first stable release
-- __version 0.1.0__ (4th October, 2013) - big refactor and change of specification
-- __version 0.0.3__ (19th September, 2013) - fix dependencies in `package.json`
+- __version 1.1.0__ (1st June 2014) - apply doT to all HTML files
+- __version 1.0.2__ (10th December 2013) - Windows compatibility
+- __version 1.0.1__ (24th November 2013) - fix for new markdown version
+- __version 1.0.0__ (7th October 2013) - first stable release
+- __version 0.1.0__ (4th October 2013) - big refactor and change of specification
+- __version 0.0.3__ (19th September 2013) - fix dependencies in `package.json`
 - __version 0.0.2__
-- __version 0.0.1__ (16th September, 2013)
+- __version 0.0.1__ (16th September 2013)
 
 [dot]: http://olado.github.io/doT/
 [marked]: https://github.com/chjj/marked
 [grunt-zetzer]: https://github.com/brainshave/grunt-zetzer
 [broccoli-zetzer]: https://github.com/brainshave/broccoli-zetzer
-[marked_options]: https://github.com/chjj/marked/tree/0d27d58f16e3aa478cbc89a9a304e592e2862c5a#options-1
+[marked-options]: https://github.com/chjj/marked/tree/0d27d58f16e3aa478cbc89a9a304e592e2862c5a#options-1
