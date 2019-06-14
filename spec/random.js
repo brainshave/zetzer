@@ -6,7 +6,7 @@ module.exports = {
 
 function random_word () {
   var word =
-    _.shuffle("qwertyuiopasdfghjklzxcvbnm").join("")
+    _.shuffle("qwertyuiopasdfghjklzxcvbnm")
     .substring(0, 5 + Math.round(Math.random() * 10));
   return word;
 }
