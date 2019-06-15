@@ -1,6 +1,6 @@
 "use strict";
 
-var random = require("./random");
+var unique = require("./unique");
 var process_file_setup = require("../process");
 var trim = require("./trim");
 
@@ -10,7 +10,7 @@ describe("process_file", function () {
 
   describe("when converted to a string", function() {
     it("returns the contents of a file", function () {
-      var content = random.word();
+      var content = unique.word();
 
       var process_file = process_file_setup({
         read_header: function () { return {}; },
@@ -24,7 +24,7 @@ describe("process_file", function () {
 
   describe("when requesting a header field", function () {
     it("returns its value", function () {
-      var title = random.word();
+      var title = unique.word();
 
       var process_file = process_file_setup({
         read_header: function () { return { title: title }; },
@@ -39,9 +39,9 @@ describe("process_file", function () {
   describe("when the page includes partial(s)", function() {
 
     it("contains the compiled content of the partial", function () {
-      var partial_content = random.word();
-      var partial_name = random.word();
-      var page_name = random.word();
+      var partial_content = unique.word();
+      var partial_name = unique.word();
+      var page_name = unique.word();
 
       function page (params) { return params.include(partial_name).toString(); }
 
@@ -57,7 +57,7 @@ describe("process_file", function () {
     });
 
     it("detects circular dependencies in partials", function () {
-      var partial_name = random.word();
+      var partial_name = unique.word();
 
       var process_file = process_file_setup({
         read_header: function () { return {}; },
@@ -71,8 +71,8 @@ describe("process_file", function () {
     });
 
     it("allows including the same partial twice in one file", function () {
-      var partial_name = random.word();
-      var page_name = random.word();
+      var partial_name = unique.word();
+      var page_name = unique.word();
 
       var process_file = process_file_setup({
         read_header: function () { return {}; },
@@ -91,15 +91,15 @@ describe("process_file", function () {
     describe("when the included partial defines a template", function() {
 
       it("the partial is wrapped in the template", function() {
-        var template_name       = random.word(),
-            partial_placeholder = random.word(),
+        var template_name       = unique.word(),
+            partial_placeholder = unique.word(),
             template_content    = template_name + partial_placeholder;
 
-        var page_name    = random.word(),
-            page_content = random.word();
+        var page_name    = unique.word(),
+            page_content = unique.word();
 
-        var partial_name    = random.word(),
-            partial_content = random.word();
+        var partial_name    = unique.word(),
+            partial_content = unique.word();
 
         var process_file = process_file_setup({
           read_header: function (filename) {

@@ -1,6 +1,6 @@
 "use strict";
 
-var random = require("./random");
+var unique = require("./unique");
 var dot_compiler_setup = require("../dot");
 
 describe("dot_compiler", function() {
@@ -8,13 +8,13 @@ describe("dot_compiler", function() {
 
     it("compiles dot templates", function() {
       var compiler = dot_compiler_setup({});
-      var word = random.word();
+      var word = unique.word();
       var content = "{{= \"" + word + "\" }}";
       expect(compiler.compile(content)).toEqual(word);
     });
 
     it("uses the dotvar parameters passed to it", function() {
-      var title = random.word();
+      var title = unique.word();
       var compiler = dot_compiler_setup({
         dotvar: {title: title}
       });
@@ -23,7 +23,7 @@ describe("dot_compiler", function() {
     });
 
     it("uses the dot template settings passed to it", function() {
-      var title = random.word();
+      var title = unique.word();
       var compiler = dot_compiler_setup({
         dotvar: {title: title},
         template_settings: {varname: "newvar"}

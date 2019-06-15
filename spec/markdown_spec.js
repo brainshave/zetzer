@@ -1,6 +1,6 @@
 "use strict";
 
-var random = require("./random");
+var unique = require("./unique");
 var trim = require("./trim");
 
 describe("markdown_compiler", function () {
@@ -20,7 +20,7 @@ describe("markdown_compiler", function () {
 
   describe("compile", function () {
     it("compiles markdown", function () {
-      var content = random.word();
+      var content = unique.word();
       expect(trim(compiler.compile(content))).toEqual("<p>" + content + "</p>");
     });
   });

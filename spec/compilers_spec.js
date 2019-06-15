@@ -1,19 +1,19 @@
 "use strict";
 
-var random = require("./random");
+var unique = require("./unique");
 var compilers_setup = require("../compilers");
 
 describe("compilers", function() {
 
   var prefix, affix;
   beforeEach(function() {
-    prefix = random.word();
-    affix = random.word();
+    prefix = unique.word();
+    affix = unique.word();
   });
 
   it("compiles file", function () {
-    var file_name = random.word();
-    var content = random.word();
+    var file_name = unique.word();
+    var content = unique.word();
 
     var compile = compilers_setup({
       read_content: function (file) { if (file === file_name) return content; },
@@ -53,8 +53,8 @@ describe("compilers", function() {
   });
 
   it("passes extra params to compilers", function () {
-    var content = random.word();
-    var param = random.word();
+    var content = unique.word();
+    var param = unique.word();
     var compile = compilers_setup({
       read_content: function () { return content; },
       compilers: [{
