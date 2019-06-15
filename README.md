@@ -132,6 +132,7 @@ place where the integration happens.
 
 ## Release History
 
+- __version 2.0.1__ (15th June, 2019) - update some dependencies
 - __version 2.0.0__ (29th July, 2014) - rename to Zetzer and split grunt-specific code to grunt-zetzer
 
 Previous versions as "grunt-stencil":

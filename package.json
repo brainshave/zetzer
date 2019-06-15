@@ -1,7 +1,7 @@
 {
   "name": "zetzer",
   "description": "HTML template processor with doT, Markdown, templates and partials",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "homepage": "https://github.com/brainshave/zetzer",
   "author": "Elise Hein <elisehein@gmail.com>",
   "contributors": [
@@ -14,7 +14,7 @@
   "bugs": {
     "url": "https://github.com/brainshave/zetzer/issues"
   },
-  "licenses": "MIT",
+  "license": "MIT",
   "engines": {
     "node": ">= 0.8.0"
   },
